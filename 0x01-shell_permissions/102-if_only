@@ -1,2 +1,2 @@
 #!/bin/bash
-find hello -user guillaume | xargs sudo chown vincent hello
+sudo chown --from=guillaume vincent * -R
