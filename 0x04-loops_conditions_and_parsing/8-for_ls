@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # ls
-for i in *; do
-	echo $i
+for i in $(find * | cut -f 2 -d '-'); do
+	echo "$i"
 done
