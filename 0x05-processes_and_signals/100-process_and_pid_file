@@ -14,6 +14,6 @@ trap "fnc_kill" SIGTERM
 trap "fnc_del" SIGQUIT
 while :
 	do
-		echo "Infinity and beyond"
+		echo "To infinity and beyond"
 		sleep 2
 	done
