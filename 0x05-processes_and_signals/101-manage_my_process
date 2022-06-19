@@ -21,17 +21,13 @@ function stop() {
 	rm -f /var/run/my_process.pid
 	echo "manage_my_process stopped"
 }
-if [ $# -ne 1]
-then
+if [ $# -ne 1 ]; then
 	error
-elif [ $1 = "start"]
-then
+elif [ $1 = "start" ]; then
 	start
-elif [ $1 = "restart"]
-then
+elif [ $1 = "restart" ]; then
 	restart
-elif [ $1 = "stop"]
-then
+elif [ $1 = "stop" ]; then
 	stop
 else
 	error
