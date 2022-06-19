@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# stops a process
+pid=$(ps aux | grep ./4-to_infinity_and_beyond | cut -c 12-16 | head -n 1)
+kill $pid

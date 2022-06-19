@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Create/Del file and display indefinitely
+function fnc_del() {
+	rm -f /var/run/script.pid
+}
+function fnc_kill() {
+	echo "I hate the kill command"
+	fnc_del
+	exit
+}
+echo $$ > /var/run/script.pid
+trap "echo Y U no love me?!" SIGINT
+trap "fnc_kill" SIGTERM
+trap "fnc_del" SIGQUIT
+while :
+	do
+		echo "Infinity and beyond"
+		sleep 2
+	done

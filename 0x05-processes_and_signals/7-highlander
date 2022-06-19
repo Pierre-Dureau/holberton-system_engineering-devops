@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# displays To infinity and beyond indefinitely
+function inv() {
+	echo "I am invincible!!!"
+}
+trap "inv" SIGTERM
+while :
+	do
+		echo "Infinity and beyond"
+		sleep 2
+	done
