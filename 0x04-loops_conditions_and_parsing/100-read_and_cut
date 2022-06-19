@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Read and cut
+for i in $(cat /etc/passwd | cut -f 1,3,6 -d :); do
+	echo "$i"
+done
