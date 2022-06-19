@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # stops a process
-pid=$(pgrep ./4-to_infinity_and_beyond | cut -c 12-16 | head -n 1)
+pid=$(pgrep -f ./4-to_infinity_and_beyond)
 kill "$pid"
