@@ -6,7 +6,7 @@ package { 'nginx':
 file { 'index.html':
   ensure  => 'present',
   path    => '/var/www/html/index.html',
-  content => 'Hellow World\n',
+  content => 'Hello World\n',
 }
 file_line { 'default':
   ensure  => present,
@@ -14,4 +14,7 @@ file_line { 'default':
   after   => 'server_name _;',
   line    => '\tlocation /redirect_me {\n\t\trewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}',
 }
-
+service { 'nginx':
+ensure  => 'running',
+require => Package['nginx'],
+}
