@@ -4,10 +4,11 @@ package { 'nginx':
   provider => 'apt',
 }
 file_line { 'default':
-  ensure => present,
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'server_name _;',
-  line   => "add_header X-Served-By ${HOSTNAME};}",
+  ensure  => present,
+  path    => '/etc/nginx/sites-available/default',
+  after   => 'server_name _;',
+  line    => 'add_header X-Served-By $HOSTNAME;}',
+  require => Package['nginx'],
 }
 service { 'nginx':
   ensure  => running,
