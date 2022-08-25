@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# display information about subdomains
+# shellcheck disable=SC2086
+print_info () {
+	value=$(dig "$2"."$1" | awk '/ANSWER SECTION/{getline; print}' | awk -F" " '{print $4,$5}')
+	record=$(echo "$value" | cut -d ' ' -f1)
+	destination=$(echo "$value" | cut -d ' ' -f2)
+	echo "The subdomain $2 is a $record record and points to $destination"
+}
+
+if [ $# -eq 2 ]; then
+	print_info "$1" "$2"
+else
+	for sub in 'www' 'lb-01' 'web-01' 'web-02' ; do
+		print_info $1 $sub
+	done
+fi
