@@ -24,5 +24,5 @@ if __name__ == '__main__':
             tasks.append(task)
         dict[id] = tasks
 
-    with open("todo_all_emplyees.json", mode="w") as file:
+    with open("todo_all_employees.json", mode="w") as file:
         json.dump(dict, file)
