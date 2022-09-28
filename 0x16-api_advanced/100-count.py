@@ -22,7 +22,7 @@ def count_words(subreddit, word_list, after=None, dictCount={}):
                 for word in line:
                     if word == keyword.lower():
                         if keyword.lower() not in dictCount.keys():
-                            dictCount[word.lower()] = 0
+                            dictCount[word.lower()] = 1
                         else:
                             dictCount[word.lower()] += 1
 
