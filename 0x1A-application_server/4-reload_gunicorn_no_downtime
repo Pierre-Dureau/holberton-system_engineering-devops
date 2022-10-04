@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# kill the main process of gunicorn and restart it
+pid=$(pgrep gunicorn | head -n 1)
+kill -HUP $pid
