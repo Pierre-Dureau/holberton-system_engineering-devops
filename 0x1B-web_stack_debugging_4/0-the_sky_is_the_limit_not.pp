@@ -5,5 +5,5 @@ exec {'change ulimit 15 to 15000':
 }
 exec {'restart nginx':
   command  => 'sudo service nginx restart',
-  provider => shell,
+  path     => '/usr/bin',
 }
